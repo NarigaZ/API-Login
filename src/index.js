@@ -13,4 +13,7 @@ app.get('/' , (req, res) => {
 require('./Controllers/authController')(app);
 require('./Controllers/projectController')(app);
 
-app.listen(3000);
+
+
+var porta = process.env.PORT || 8080;
+app.listen(porta);
