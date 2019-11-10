@@ -68,10 +68,11 @@ router.post('/forgot', async (req, res) => {
 
         await User.findByIdAndUpdate(user.id, {
             '$set': {
-                passwordResetToken: token,
-                passordResetExpires: now,
+            passwordResetToken: token,
+            passwordResetExpires: now,
             }
-        });
+            }, { new: true, useFindAndModify: false }
+            );
 
         console.log(token, now);
     } catch (err) {
