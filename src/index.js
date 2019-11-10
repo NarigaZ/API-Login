@@ -10,10 +10,7 @@ app.get('/' , (req, res) => {
     res.send('Ok');
 });
 
-require('./Controllers/authController')(app);
-require('./Controllers/projectController')(app);
-
-
+require('./app/Controllers/index')(app);
 
 var porta = process.env.PORT || 8080;
 app.listen(porta);
